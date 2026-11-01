@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://YOUR-PUBLIC-PORTFOLIO-URL/sitemap.xml

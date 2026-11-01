@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Replace the placeholder base URL after publishing the site. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://YOUR-PUBLIC-PORTFOLIO-URL/</loc></url>
+  <url><loc>project-details.html</loc></url>
+</urlset>

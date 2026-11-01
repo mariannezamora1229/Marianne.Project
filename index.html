@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio of Marianne Zamora, a third-year BSIT student at City College of Calamba, featuring academic projects, skills, education, and contact information.">
+  <meta name="keywords" content="Marianne Zamora, BSIT student, student portfolio, web development, PHP, MySQL, academic projects">
+  <meta name="author" content="Marianne Zamora">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Marianne C. Zamora | Portfolio">
+  <meta property="og:url" content="https://YOUR-PUBLIC-PORTFOLIO-URL/">
+  <link rel="canonical" href="https://YOUR-PUBLIC-PORTFOLIO-URL/">
+  <meta property="og:title" content="Marianne Zamora | BSIT Student Portfolio">
+  <meta property="og:description" content="Academic projects, skills, education, and contact information.">
+  <meta property="og:image" content="ZAMORA_2x2_3c09cdbc.jpg">
+  <meta name="theme-color" content="#FFC7C7">
+  <title>Marianne C. Zamora | BSIT Student Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="brand" href="#home" id="brandName">Portfolio</a>
+    <button class="menu-button" id="menuButton" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+    <nav id="navLinks" aria-label="Main navigation">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#graphic-design">Graphics</a>
+      <a href="#experience">Experience</a><a href="#education">Education</a><a href="#cv">CV</a><a href="#contact">Contact</a>
+    </nav>
+    <button class="theme-button" id="themeButton" type="button" aria-label="Toggle dark or light theme" title="Toggle theme">◐</button>
+  </div>
+</header>
+
+<main id="main-content">
+<section class="hero section" id="home">
+  <div class="hero-copy">
+    <span class="eyebrow">STUDENT PORTFOLIO</span>
+    <h1>Hello, I'm <span id="heroName">...</span></h1>
+    <h2 id="heroRole"></h2>
+    <p id="heroIntro"></p>
+    <div class="actions"><a class="button primary" href="#projects">See my projects</a><a class="button secondary" href="Marianne_C_Zamora_CV.pdf" download>Download CV</a><a class="button secondary" href="#contact">Contact me</a><a class="button secondary github-hero-link" href="https://github.com/mariannezamora1229" target="_blank" rel="noopener noreferrer">GitHub Profile ↗</a></div>
+  </div>
+  <aside class="profile-card">
+    <img id="profilePhoto" src="" alt="Profile photo">
+    <div><strong id="profileCaption"></strong><span id="location"></span></div>
+  </aside>
+</section>
+
+<section class="highlights" id="highlights"></section>
+
+<section class="section" id="about">
+  <div class="section-heading"><span class="eyebrow">ABOUT</span><h2>A little about me</h2></div>
+  <div class="about-panel"><p id="aboutText"></p></div>
+</section>
+
+<section class="section soft" id="skills">
+  <div class="section-heading"><span class="eyebrow">SKILLS</span><h2>Skills I'm learning</h2><p>Some of the tools and skills I have used in class and in projects.</p></div>
+  <div class="skills-grid" id="skillsList"></div>
+</section>
+
+<section class="section" id="projects">
+  <div class="section-heading"><span class="eyebrow">PROJECTS</span><h2>School and personal projects</h2><p>A few projects and exercises I have worked on.</p></div>
+  <div class="project-tools">
+    <label class="visually-hidden" for="projectSearch">Search projects</label><input id="projectSearch" type="search" placeholder="Search by project, technology, category, or year" aria-label="Search projects">
+    <select id="projectCategory" aria-label="Filter projects by category"><option value="">All categories</option></select>
+    <select id="projectYear" aria-label="Filter projects by year"><option value="">All years</option></select>
+  </div>
+  <p id="projectCount" class="results-count" aria-live="polite"></p>
+  <div class="projects-grid" id="projectsList"></div>
+</section>
+
+<section class="section" id="graphic-design">
+  <div class="section-heading"><span class="eyebrow">GRAPHIC DESIGN</span><h2>Graphic design activities</h2><p>Selected final outputs from my Prelim, Midterm, and Finals graphic design activities.</p></div>
+  <div class="collections-grid" id="collectionsList"></div>
+</section>
+
+<section class="section soft" id="experience">
+  <div class="section-heading"><span class="eyebrow">EXPERIENCE</span><h2>Activities and roles</h2></div>
+  <div class="timeline" id="experienceList"></div>
+</section>
+
+<section class="section" id="education">
+  <div class="section-heading"><span class="eyebrow">EDUCATION</span><h2>Education and certificates</h2></div>
+  <div class="education-grid" id="educationList"></div>
+  <div class="certificate-box"><h3>Achievements</h3><ul id="achievementsList"></ul></div><div class="certificate-box"><h3>Certificates</h3><ul id="certificatesList"></ul></div>
+</section>
+
+<section class="section" id="cv">
+  <div class="section-heading"><span class="eyebrow">CURRICULUM VITAE</span><h2>My CV</h2><p>View the current CV in your browser or download a PDF copy.</p></div>
+  <div class="cv-actions"><a class="button primary" href="Marianne_C_Zamora_CV.pdf" download>Download CV (PDF)</a><a class="button secondary" href="Marianne_C_Zamora_CV.pdf" target="_blank" rel="noopener">View CV Online</a></div>
+</section>
+<section class="section contact-section" id="contact">
+  <div class="section-heading"><span class="eyebrow">CONTACT</span><h2>Get in touch</h2><p>Feel free to contact me about school projects or collaboration.</p></div>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <p><span>Email</span><a id="email" href="#"></a></p>
+      <p><span>Phone</span><strong id="phone"></strong></p>
+      <p><span>Location</span><strong id="contactLocation">Calamba City, Laguna</strong></p>
+      <div class="social-links">
+        <a id="facebook" class="button secondary" href="#" target="_blank" rel="noopener">Facebook profile ↗</a>
+        <a id="github" class="button secondary" href="#" target="_blank" rel="noopener">GitHub profile ↗</a>
+      </div>
+    </div>
+    <form id="contactForm" class="contact-card">
+      <label>Your name<input name="senderName" autocomplete="name" maxlength="80" required></label>
+      <label>Your email<input name="senderEmail" type="email" autocomplete="email" maxlength="120" required></label>
+      <label>Subject<input name="subject" maxlength="120" required></label>
+      <label>Message<textarea name="message" rows="4" maxlength="3000" required></textarea></label>
+      <button class="button primary" type="submit">Open email app</button>
+      <small>This form opens your email app. It does not send messages directly from the website.</small>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-identity">
+    <strong id="footerName"></strong>
+    <span id="footerRole">3rd-year BSIT Student</span>
+    <a id="footerEmail" href="mailto:mariannezamora1229@gmail.com"></a>
+    <a id="footerGithub" href="https://github.com/mariannezamora1229" target="_blank" rel="noopener">GitHub ↗</a>
+  </div>
+  <nav class="footer-nav" aria-label="Footer navigation">
+    <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a>
+    <a href="#experience">Experience</a><a href="#projects">Projects</a>
+    <a href="#education">Education</a><a href="#cv">CV</a><a href="#contact">Contact</a>
+  </nav>
+  <p class="footer-copyright">© <span id="copyrightYear"></span> <span id="copyrightName">Marianne Zamora</span>. All rights reserved.</p>
+</footer>
+<dialog id="projectModal"><div id="modalContent"></div></dialog>
+<dialog id="galleryViewer" class="gallery-viewer"><button class="close" id="closeGallery" aria-label="Close">×</button><h2 id="galleryTitle"></h2><img id="galleryImage" src="" alt=""></dialog>
+
+<script src="js_config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

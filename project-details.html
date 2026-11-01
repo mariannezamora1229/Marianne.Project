@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Project details from Marianne Zamora's portfolio.">
+  <meta name="theme-color" content="#F8E6E9">
+  <title>Project Details | Marianne Zamora</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body.detail-page { background: var(--bg, #f7f7f7); }
+    .detail-shell { width:min(900px, calc(100% - 40px)); margin:0 auto; padding:64px 0 90px; }
+    .detail-back { display:inline-block; color:var(--accent, #d78696); font-weight:700; text-decoration:none; margin-bottom:34px; }
+    .detail-back:hover { text-decoration:underline; }
+    .detail-eyebrow { color:var(--accent-ink, #9f455b); font-size:.78rem; font-weight:800; letter-spacing:.18em; text-transform:uppercase; margin:0 0 24px; }
+    .detail-title { font-size:clamp(2.2rem, 6vw, 3.7rem); line-height:1.12; letter-spacing:-.055em; margin:0 0 26px; color:var(--text, #222); }
+    .detail-hero { display:block; width:min(640px, 100%); max-height:470px; object-fit:contain; margin:0 auto 28px; padding:10px; border-radius:16px; background:#f8e6e9; }
+    .detail-description { font-size:1.08rem; line-height:1.8; margin:0 0 18px; }
+    .detail-meta { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin:28px 0; }
+    .detail-meta-card { padding:18px 20px; border:1px solid var(--border, #e7dfe0); border-radius:14px; background:var(--card, #fff); }
+    .detail-meta-card span { display:block; color:var(--muted, #777); font-size:.76rem; text-transform:uppercase; letter-spacing:.12em; font-weight:800; margin-bottom:7px; }
+    .detail-meta-card strong { color:var(--text, #222); }
+    .detail-section-title { font-size:1.45rem; margin:34px 0 14px; }
+    .detail-tags { display:flex; flex-wrap:wrap; gap:9px; }
+    .detail-tags span { background:#f8e6e9; color:#9f455b; border-radius:999px; padding:8px 13px; font-weight:700; font-size:.86rem; }
+    .detail-gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:18px; }
+    .detail-gallery img { width:100%; height:230px; object-fit:contain; border-radius:13px; padding:8px; background:#f8e6e9; }
+    .detail-note { color:var(--muted, #777); font-size:.92rem; line-height:1.7; margin-top:22px; }
+    .detail-not-found { padding:70px 0; text-align:center; }
+    @media(max-width:600px) { .detail-shell{padding-top:38px}.detail-meta,.detail-gallery{grid-template-columns:1fr}.detail-gallery img{height:auto;max-height:300px}.detail-title{font-size:2.25rem} }
+  </style>
+</head>
+<body class="detail-page">
+  <main class="detail-shell" id="detailContent">
+    <a class="detail-back" href="index.html#projects">← Back to projects</a>
+    <p>Loading project…</p>
+  </main>
+  <script>
+    (() => {
+      const projectData = {
+        "ulat-ccc": {
+          id: "ulat-ccc",
+          title: "Ulat CCC: Campus Facility Issue and Student Feedback Portal",
+          category: "Web Development",
+          year: "2025",
+          status: "Academic Project",
+          image: "asset_image_b9a7372c.png",
+          description: "A website where students can report campus concerns, including facility issues, and share suggestions or feedback.",
+          details: "The project provides a web-based way for students to submit campus concerns and suggestions for review by administrators.",
+          role: "Project Team Member",
+          technologies: ["PHP", "HTML", "CSS"],
+          screenshots: ["ulat-ccc_01-student-landing-page.png", "ulat-ccc_02-student-login-page.png", "ulat-ccc_03-admin-login-page.png"]
+        },
+        "revilloza-apartment-management-system": {
+          id: "revilloza-apartment-management-system",
+          title: "Revilloza Apartment Management System",
+          category: "Research",
+          year: "2026",
+          status: "Localhost Only",
+          image: "asset_image_07a44da1.png",
+          description: "A web-based apartment management system developed to help manage tenant records, rental billing, payment monitoring, apartment information, and financial reports. The current version runs locally on localhost and has not been deployed publicly.",
+          details: "The system includes an administrator dashboard, tenant management, building and landlord management, billing and payment monitoring, and monthly and yearly financial reports. It is currently demonstrated through a local development environment.",
+          role: "Full Stack Developer",
+          technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+          screenshots: ["revilloza_01-login-page.png", "revilloza_02-admin-dashboard.png", "revilloza_03-tenant-management.png", "revilloza_04-reports-financial-summary.png"]
+        }
+      };
+      const esc = value => String(value ?? "").replace(/[&<>"']/g, ch => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" }[ch]));
+      const id = new URLSearchParams(location.search).get("id");
+      const project = projectData[id];
+      const root = document.getElementById("detailContent");
+      if (!project) {
+        root.innerHTML = '<div class="detail-not-found"><a class="detail-back" href="index.html#projects">← Back to projects</a><h1>Project not found</h1><p>Use the project buttons on the portfolio homepage to open a project.</p></div>';
+        return;
+      }
+      root.innerHTML = `
+        <a class="detail-back" href="index.html#projects">← Back to projects</a>
+        <p class="detail-eyebrow">${esc(project.category)} · ${esc(project.year)} · ${esc(project.status)}</p>
+        <h1 class="detail-title">${esc(project.title)}</h1>
+        <img class="detail-hero" src="${esc(project.image)}" alt="${esc(project.title)} preview">
+        <p class="detail-description">${esc(project.description)}</p>
+        <p class="detail-description">${esc(project.details)}</p>
+        <div class="detail-meta">
+          <div class="detail-meta-card"><span>My role</span><strong>${esc(project.role)}</strong></div>
+          <div class="detail-meta-card"><span>Project status</span><strong>${esc(project.status)}</strong></div>
+        </div>
+        <h2 class="detail-section-title">Technologies used</h2>
+        <div class="detail-tags">${project.technologies.map(item => `<span>${esc(item)}</span>`).join("")}</div>
+        <h2 class="detail-section-title">Project screenshots</h2>
+        <div class="detail-gallery">${project.screenshots.map((src,index) => `<img src="${esc(src)}" alt="${esc(project.title)} screenshot ${index+1}" loading="lazy">`).join("")}</div>
+        ${project.id === "revilloza-apartment-management-system" ? '<p class="detail-note">Note: The current version of this system runs locally on localhost and has not been deployed publicly. Screenshots are provided for portfolio presentation.</p>' : ''}
+      `;
+      if (localStorage.getItem("portfolioTheme") === "dark") document.body.classList.add("dark");
+    })();
+  </script>
+</body>
+</html>
