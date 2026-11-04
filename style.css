@@ -289,3 +289,20 @@ button:not(.gallery-open):not(.close):active {
 .github-hero-link { border-color: var(--accent-ink); color: var(--accent-ink); }
 .github-hero-link:hover { background: var(--soft); color: var(--accent-ink); }
 .dark .github-hero-link { color: var(--accent-ink); border-color: var(--accent); }
+
+
+/* Added portfolio analytics section; existing site styles remain unchanged. */
+.analytics-section { padding-top: 64px; padding-bottom: 76px; }
+.analytics-card {
+  display: flex; align-items: center; justify-content: space-between; gap: 28px;
+  padding: 28px 30px; background: var(--surface); border: 1px solid var(--line);
+  border-radius: 16px; box-shadow: var(--shadow);
+}
+.analytics-copy { max-width: 620px; }
+.analytics-label { display: inline-block; color: var(--accent-ink); font-size: .76rem; font-weight: 800; letter-spacing: .14em; }
+.analytics-copy p { margin: 8px 0 5px; color: var(--text); font-weight: 600; }
+.analytics-copy small { color: var(--muted); font-size: .82rem; }
+.analytics-number { min-width: 150px; min-height: 74px; display: flex; align-items: center; justify-content: center; padding: 12px 18px; border: 1px solid var(--line); border-radius: 12px; background: var(--soft); color: var(--accent-ink); font: 800 2rem Manrope, sans-serif; text-align: center; }
+.analytics-number div { margin: 0 !important; padding: 0 !important; border: 0 !important; background: transparent !important; color: inherit !important; font: inherit !important; }
+.analytics-loading { color: var(--muted); font: 600 .9rem 'DM Sans', sans-serif; }
+@media(max-width:560px) { .analytics-card { align-items: stretch; flex-direction: column; padding: 22px; } .analytics-number { min-height: 68px; } }
