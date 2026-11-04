@@ -141,17 +141,42 @@
 <script data-goatcounter="https://marianne-zamora.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <script>
   (function loadPortfolioVisitCount() {
-    let attempts = 0;
-    const timer = window.setInterval(() => {
-      if (window.goatcounter && typeof window.goatcounter.visit_count === "function") {
-        window.clearInterval(timer);
-        window.goatcounter.visit_count({ append: "#visitorCounter", path: "TOTAL", no_branding: true });
-      } else if (++attempts >= 50) {
-        window.clearInterval(timer);
-        const counter = document.getElementById("visitorCounter");
-        if (counter) counter.innerHTML = '<span class="analytics-loading">Visit count is temporarily unavailable.</span>';
+    const counter = document.getElementById("visitorCounter");
+    const counterUrl = "https://marianne-zamora.goatcounter.com/counter/TOTAL.json";
+
+    async function updateVisitCount() {
+      if (!counter) return;
+
+      try {
+        const response = await fetch(counterUrl, {
+          method: "GET",
+          mode: "cors",
+          cache: "no-store",
+          headers: { "Accept": "application/json" }
+        });
+
+        if (!response.ok) {
+          throw new Error("Counter request failed: " + response.status);
+        }
+
+        const data = await response.json();
+        const total = Number.parseInt(data.count, 10);
+
+        if (!Number.isFinite(total)) {
+          throw new Error("GoatCounter returned an invalid count.");
+        }
+
+        counter.textContent = total.toLocaleString();
+        counter.setAttribute("aria-label", total + " total portfolio visits");
+      } catch (error) {
+        console.error("Unable to load the GoatCounter total:", error);
+        counter.textContent = "Count temporarily unavailable";
+        counter.setAttribute("aria-label", "Visitor count temporarily unavailable");
       }
-    }, 200);
+    }
+
+    updateVisitCount();
+    window.setInterval(updateVisitCount, 60000);
   })();
 </script>
 <script src="js_config.js"></script>
