@@ -113,10 +113,42 @@
 </section>
 
 <section class="section analytics-section" id="analytics" aria-labelledby="analyticsTitle">
-  <div class="section-heading"><span class="eyebrow">WEBSITE ACTIVITY</span><h2 id="analyticsTitle">Portfolio Analytics</h2><p>A live overview of visits to this portfolio website.</p></div>
-  <div class="analytics-card">
-    <div class="analytics-copy"><span class="analytics-label">TOTAL VISITS</span><p>Number of visits recorded across the portfolio website.</p><small>Statistics are provided by GoatCounter and may take a little time to update.</small></div>
-    <div class="analytics-number" id="visitorCounter" aria-live="polite"><span class="analytics-loading">Loading visit count…</span></div>
+  <div class="section-heading analytics-heading">
+    <span class="eyebrow">WEBSITE ACTIVITY</span>
+    <h2 id="analyticsTitle">Portfolio Analytics</h2>
+    <p>A quick look at the visits recorded on my portfolio.</p>
+  </div>
+
+  <div class="analytics-dashboard">
+    <article class="analytics-main-card">
+      <div class="analytics-card-top">
+        <div>
+          <span class="analytics-kicker">ALL-TIME VISITORS</span>
+          <h3>Total portfolio visits</h3>
+        </div>
+        <span class="analytics-icon" aria-hidden="true">↗</span>
+      </div>
+      <div class="analytics-value-row">
+        <strong class="analytics-number" id="visitorCounter" aria-live="polite">
+          <span class="analytics-loading">Loading…</span>
+        </strong>
+        <span class="analytics-live"><span class="analytics-live-dot"></span> Live counter</span>
+      </div>
+      <div class="analytics-card-foot">
+        <span class="analytics-foot-icon" aria-hidden="true">✦</span>
+        <span>Thank you for visiting my portfolio!</span>
+        <span class="analytics-provider">Powered by GoatCounter</span>
+      </div>
+    </article>
+
+    <aside class="analytics-side-card">
+      <span class="analytics-side-icon" aria-hidden="true">♡</span>
+      <span class="analytics-kicker">A LITTLE NOTE</span>
+      <h3>Thanks for stopping by.</h3>
+      <p>Every visit means a lot. Feel free to explore my projects, skills, and learning journey.</p>
+      <a href="#projects" class="analytics-explore-link">Explore my projects <span aria-hidden="true">→</span></a>
+      <div class="analytics-decoration" aria-hidden="true">✳</div>
+    </aside>
   </div>
 </section>
 </main>
