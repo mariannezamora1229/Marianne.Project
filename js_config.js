@@ -1,3 +1,4 @@
+
 /*
   EDIT YOUR PORTFOLIO HERE.
   You can change the text, links, skills, projects, education, and experience below.
@@ -5,7 +6,7 @@
 */
 const portfolio = {
   name: "Marianne Zamora",
-  role: "3rd-year BSIT Student",
+  role: "Graphics Designer",
   school: "City College of Calamba",
   location: "Calamba City, Laguna",
   email: "mariannezamora1229@gmail.com",
